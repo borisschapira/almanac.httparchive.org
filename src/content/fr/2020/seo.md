@@ -25,38 +25,38 @@ featured_stat_label_3: de mots supplémentaires sont affichés dans le rendu par
 
 L'optimisation pour les moteurs de recherche, ou <span lang="en">Search Engine Optimization</span> (SEO) est la pratique consistant à optimiser la configuration technique des sites web, la pertinence du contenu et la portée des liens afin de rendre leurs informations facilement trouvables et plus pertinentes pour répondre aux besoins de recherche des utilisateurs. En conséquence, les sites web améliorent leur visibilité dans les résultats des moteurs de recherche pour les requêtes pertinentes des utilisateurs concernant leur contenu et leur activité, augmentant leur trafic, leurs conversions et leurs bénéfices.
 
-Despite its complex multidisciplinary nature, in recent years SEO has evolved to become one of the most popular digital marketing strategies and channels.
+Malgré sa nature multidisciplinaire complexe, le référencement a évolué ces dernières années pour devenir l'une des stratégies et l'un des canaux de marketing numérique les plus populaires.
 
 {{ figure_markup(
   image="seo-google-trends.png",
-  caption="Google Trends comparison of SEO versus pay-per-click and social media marketing.",
-  description="Screenshot from Google Trends showing the change in time for three three digital marketing related terms: Search Engine Optimization starts at 25% but shows an increasing importance over time to 75% now. Pay-per-click similarly starts at 25% but started falling in 2009 and looks to be less than 10% now. Social-media marketing starts very small (approximately 5%) and shows some slight growth over time ending up slightly above pay-per-click around the 10% mark.",
+  caption="Comparaison Google Trends entre Search Engine Optimization (SEO), Pay-per-click (Coût-par-clic) et le Social Media Marketing (Marketing des médias sociaux).",
+  description="Capture de Google Trends montrant l'évolution pour trois termes liés au marketing numérique, entre 2004 et 2020 : l'optimisation pour les moteurs de recherche commence à 25 % mais montre une importance croissante au fil du temps pour atteindre 75 % maintenant. Le coût-par-clic commence également à 25 %, mais a commencé à baisser en 2009 et semble être inférieur à 10 % aujourd'hui. Le marketing des médias sociaux commence à un niveau très bas (environ 5 %) et affiche une légère croissance au fil du temps pour finir par dépasser légèrement le paiement au clic autour de la barre des 10 %.",
   width=1600,
   height=844
   )
 }}
 
-The goal of the Web Almanac's SEO chapter is to identify and assess main elements and configurations that play a role in a website's organic search optimization. By identifying these elements, we hope that websites can leverage our findings to improve their ability to be crawled, indexed, and ranked by search engines. In this chapter, we provide a snapshot of their status in 2020 and a summary of what has changed [since 2019](../2019/seo).
+L'objectif du chapitre SEO du Web Almanac est d'identifier et d'évaluer les principaux éléments et configurations qui jouent un rôle dans l'optimisation de recherche organique d'un site web. En identifiant ces éléments, nous espérons que les sites web pourront tirer parti de nos conclusions pour améliorer leur capacité à être explorés, indexés et classés par les moteurs de recherche. Dans ce chapitre, nous donnons un aperçu de leur situation en 2020 et un résumé de ce qui a changé [depuis 2019](../2019/seo).
 
-It is important to note that this chapter is based on analysis from [Lighthouse](https://developers.google.com/web/tools/lighthouse/) on mobile sites, the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) on mobile and desktop, as well as raw and rendered HTML elements from the [HTTP Archive](https://httparchive.org/) on mobile and desktop. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it on our [Methodology](./methodology) page.
+Il est important de noter que ce chapitre est basé sur l'analyse de [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sur les sites mobiles, le [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) sur les sites mobiles et de bureau, ainsi que sur des éléments HTML bruts et rendus de [HTTP Archive](https://httparchive.org/) sur les sites mobiles et de bureau. Dans le cas de HTTP Archive et Lighthouse, il est limité aux données collectées sur les pages d'accueil des sites web uniquement, et non à des explorations des sites. Nous avons pris cela en considération lors de nos évaluations. Il est important de garder cette distinction à l'esprit lorsque nous tirons des conclusions de nos résultats. Vous pouvez en apprendre davantage à ce sujet sur notre page [Méthodologie](./methodology).
 
-Let's go through this year's organic search optimization main findings.
+Passons en revue les principaux résultats de l'optimisation de recherche organique de cette année.
 
-## Fundamentals
+## Fondamentaux
 
-This section features the optimization-related findings of the web configurations and elements that make up the foundation for search engines to correctly crawl, index, and rank websites to provide users the best results for their queries.
+Cette section présente les résultats liés à l'optimisation de la configuration des sites web et aux éléments constituant la base pour que les moteurs de recherche explorent, indexent et classent correctement les sites web afin de fournir aux utilisateurs et utilisatrices les meilleurs résultats pour leurs requêtes.
 
-### Crawlability and indexability
+### Adaptation au crawling et indexabilité
 
-Search engines use web crawlers (also called spiders) to discover new or updated content from websites, browsing the web by following links between pages. Crawling is the process of looking for new or updated web content (whether web pages, images, videos, etc.).
+Les moteurs de recherche utilisent des robots de parcours (aussi appelés <span lang="en">crawlers</span> ou <span lang="en">spiders</span>) pour découvrir des contenus nouveaux ou mis à jour sur les sites web, en suivant les liens entre les pages. Le crawling est le processus de recherche de contenu web nouvellement publié ou mis à jour (qu'il s'agisse de pages web, d'images, de vidéos, etc.)
 
-Search crawlers discover content by following links between URLs, as well as using additional sources that website owners can provide, like the generation of XML sitemaps, which are lists of URLs that a website's owner wants search engines to index, or through direct crawl requests via search engines tools, like Google's Search Console.
+Ces robots de recherche découvrent le contenu en suivant les liens entre les URL et en utilisant des informations supplémentaires que les propriétaires de sites web peuvent fournir, comme les sitemaps XML générés, qui sont des listes d'URL que le propriétaire d'un site web veut faire indexer par les moteurs de recherche, ou des demandes d'indexation directes via les outils fournis par les moteurs de recherche, comme la <span lang="en">Search Console</span> de Google.
 
-Once search engines access web content they need to _render_—similar to what web browsers do—and index it. Search engines will then analyze and catalog the identified information, trying to understand it as users do, to ultimately store it in its _index_, or web database.
+Une fois que les moteurs de recherche accèdent au contenu du web, ils doivent _procéder à son rendu_ (comme le feraient les navigateurs) et l'indexer. Les moteurs de recherche analyseront et catalogueront ensuite les informations identifiées, en essayant de les comprendre comme le font les utilisateurs et utilisatrices, pour finalement les stocker dans leur _index_, ou base de données web.
 
-When users enter a query, search engines search their index to find the best content to display on the search results pages to answer their queries, using a variety of factors to determine which pages are shown before others.
+Lorsque des personnes effectuent une requête, les moteurs de recherche interrogent leur index afin de trouver le meilleur contenu à afficher sur les pages de résultats pour répondre à cette requête, en utilisant divers facteurs pour déterminer quelles pages sont affichées avant les autres.
 
-For websites looking to optimize their visibility in search results, it is important to follow certain crawlability and indexability best practices: correctly configuring `robots.txt`, robots `meta` tags, `X-Robots-Tag` HTTP headers, and canonical tags, among others. These best practices help search engines in accessing web content more easily and indexing them more accurately. A thorough analysis of these configurations is provided in the following sections.
+Pour les sites web qui cherchent à optimiser leur visibilité dans les résultats de recherche, il est important de suivre certaines bonnes pratiques en matière d'explorabilité et d'indexabilité : configuration correcte du fichier `robots.txt`, des balises `meta` des robots, des en-têtes HTTP `X-Robots-Tag` et des balises canoniques, entre autres. Ces bonnes pratiques aident les moteurs de recherche à accéder plus facilement au contenu du web et à l'indexer avec plus de précision. Une analyse approfondie de ces configurations est fournie dans les sections suivantes.
 
 #### `robots.txt`
 
